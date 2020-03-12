@@ -19,12 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
   startButton.addEventListener('click', startGame);
 
   function handleCardClick(event) {
-    console.log(event.target);
-    // I'm seeing some events that are targetting the
-    // img on the back of the card here...
     // if we're not showing the front, do nothing
     if (!event.target.classList.contains('front')) return;
-    console.log(event.target, event.target.parentElement);
 
     // Assign the parent element of the target to currentCard
     let currentCard = event.target.parentElement;
@@ -81,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Copy the array
     let arrayCopy = array.slice();
 
-    // This code gets a little dense for me...
     for (let index1 = arrayCopy.length - 1; index1 > 0; index1--) {
       let index2 = Math.floor(Math.random() * (index1 + 1));
       let temp = arrayCopy[index1];
